@@ -4,6 +4,27 @@
 
 **これは土台であり、完成形ではない。** 業務に必要なツールは各自で追加して使う。
 
+## Claude Code で導入する
+
+Chrome と Claude Desktop を手動でインストールし、Claude に Google SSO でログインした後、Claude Desktop の Claude Code に以下を貼り付けて依頼する。
+
+```txt
+Achroma の全社標準 Mac セットアップを進めて。
+手順と収録アプリは https://github.com/Achroma-inc/setup-mac の README.md と Brewfile が正。読んでから進めること。
+
+1. Homebrew が未インストールならインストールし、Apple Silicon なら PATH を通す
+2. Brewfile のアプリを一括インストールする。/Applications に既にあるアプリ(Chrome・Claude 等)は brew install --cask --adopt <cask> で取り込む
+3. brew bundle check で完了を確認する
+4. 結果と、手動対応が必要なもの(Bluedot のインストール、各アプリの初回サインイン)を報告する
+
+制約
+- sudo・管理者パスワードが必要なコマンドは実行せず、私がターミナルで実行するコマンドを提示する
+- Brewfile にないアプリは入れない
+- ~/.zprofile 以外の設定ファイルは変更しない
+```
+
+手動で進める場合は以下の「導入」を参照。
+
 ## 導入
 
 ### 1. Homebrew をインストール
